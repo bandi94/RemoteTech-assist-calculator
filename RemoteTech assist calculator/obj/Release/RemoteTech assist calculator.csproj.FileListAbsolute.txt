@@ -1,0 +1,5 @@
+C:\Users\Bandy\Documents\Visual Studio 2010\C# Projects\RemoteTech assist calculator\Output\Plugins\RemoteTech assist calculator.dll
+C:\Users\Bandy\Documents\Visual Studio 2010\C# Projects\RemoteTech assist calculator\RemoteTech assist calculator\obj\Release\RemoteTech assist calculator.dll
+C:\Users\Bandy\Documents\Visual Studio 2010\C# Projects\RemoteTech assist calculator\RemoteTech assist calculator\obj\Release\RemoteTech assist calculator.csprojResolveAssemblyReference.cache
+C:\Users\Bandy\Documents\Visual Studio 2010\C# Projects\RemoteTech assist calculator\RemoteTech assist calculator\obj\Release\RemoteTech_assist_calculator.Properties.Resources.resources
+C:\Users\Bandy\Documents\Visual Studio 2010\C# Projects\RemoteTech assist calculator\RemoteTech assist calculator\obj\Release\RemoteTech assist calculator.csproj.GenerateResource.Cache
