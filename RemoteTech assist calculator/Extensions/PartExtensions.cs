@@ -26,6 +26,27 @@ namespace RemoteTech_assist_calculator.Extension
             return false;
         }
 
+        public static bool IsPrimaryEditor(this Part thisPart, int moduleCalssId)
+        {
+            if (EditorLogic.fetch != null)
+                {
+                    foreach (Part part in EditorLogic.fetch.ship.Parts)
+                    {
+                        if (part.Modules.Contains(moduleCalssId))
+                        {
+                            if (thisPart == part)
+                            {
+                                return true;
+                            }
+                            break;
+                        }
+                    }
+                
+                return false;
+            }
+            return false;
+        }
+
 
 
         public static double TotalElectricConsumption()
