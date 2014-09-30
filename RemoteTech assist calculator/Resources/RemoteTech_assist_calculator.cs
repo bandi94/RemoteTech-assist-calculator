@@ -12,7 +12,7 @@ namespace RemoteTech_assist_calculator
     public class RemoteTech_assist_calculator : PartModule
     {
 
-        private ApplicationLauncherButton _appButton;
+        private ApplicationLauncherButton _appButton = null;
         public static Rect _WindowPosition = new Rect();
         private static Rect _PlanetsWindow = new Rect(0, 0,(float)(Screen.width * 0.07),0);
         private static Rect _GraphicWindow = new Rect(0,0,(int)(Screen.width*0.22),(int)(Screen.height*0.39));
@@ -47,6 +47,7 @@ namespace RemoteTech_assist_calculator
         {
             ExecuteOnStartOperations();
             InitStyles();
+            isVisible = false;
 
             if (state == StartState.Editor)
             {
@@ -62,10 +63,10 @@ namespace RemoteTech_assist_calculator
                 RenderingManager.AddToPostDrawQueue(0, onDraw);
             }
 
-            isVisible = false;
-            _appButton = ApplicationLauncher.Instance.AddModApplication(this.ButtonOn, this.ButtonOff, null, null, null,null, ApplicationLauncher.AppScenes.ALWAYS, GameDatabase.Instance.GetTexture("RemoteTech2_Assist/Textures/Toolbar", false) );
+            if (_appButton == null && (!isInEditor && this.part.IsPrimary(this.vessel.parts, this.ClassID)) || this.part.IsPrimaryEditor(this.ClassID))
+                   _appButton = ApplicationLauncher.Instance.AddModApplication(this.ButtonOn, this.ButtonOff, null, null, null, null, ApplicationLauncher.AppScenes.ALWAYS, GameDatabase.Instance.GetTexture("RemoteTech2_Assist/Textures/Toolbar", false));
 
-        }
+         }
 
 
 
@@ -320,7 +321,10 @@ namespace RemoteTech_assist_calculator
       private void OnDestroy()
       {
           if (_appButton != null)
+          {
               ApplicationLauncher.Instance.RemoveModApplication(_appButton);
+              _appButton = null;
+          }
       }
 
 
