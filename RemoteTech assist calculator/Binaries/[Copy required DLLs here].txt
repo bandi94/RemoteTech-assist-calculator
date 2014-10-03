@@ -1,0 +1,7 @@
+Following DLLs must be copied from [KSP_Root]/KSP_Data/Managed on your PC.
+ Assembly-CSharp.dll
+ Assembly-CSharp-firstpass.dll
+ UnityEngine.dll
+
+You may also need some xml files from this repo.
+https://github.com/Anatid/XML-Documentation-for-the-KSP-API
